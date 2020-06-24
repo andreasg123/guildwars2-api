@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sansserif;
+    font-size: 90%;
+    background-color: #181411;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+}
+.menu > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 12em;
+    height: 4em;
+    border: 1px solid #fff2cc;
+    border-radius: 8px;
+    margin: 8px;
+    color: #fff2cc;
+    background-color: #2b2623;
+    cursor: pointer;
+}
+.tt {
+    font-family: monospace;
+    font-size: 140%;
+    font-weight: bold;
+}

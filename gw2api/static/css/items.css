@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sansserif;
+    font-size: 90%;
+    background-color: #181411;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+}
+tr {
+    vertical-align: baseline;
+}
+tr.alt td {
+    /* background-color: #231f1c; */
+    background-color: #2b2623;
+}
+tr.locked td {
+    font-style: italic;
+}
+td, th {
+    padding-right: 0.75em;
+    font-size: 90%;
+    /* border: 1px solid white; */
+}
+td:last-child, th:last-child {
+    padding-right: 4px;
+}
+th, th.sort-left {
+    text-align: left;
+}
+th.sort-left {
+    cursor: pointer;
+}
+th.sort {
+    text-align: center;
+    cursor: pointer;
+}
+th.sort:hover, th.sort-left:hover {
+    text-decoration: underline;
+}
+h3 {
+    margin-bottom: 0;
+}
+.right {
+    text-align: right;
+}
+.basic {
+    color: white;
+}
+.fine {
+    color: #62a4da;
+}
+.masterwork {
+    color: #1a9306;
+}
+.rare {
+    color: #fcd00b;
+}
+.exotic {
+    color: #ffa405;
+}
+.ascended {
+    color: #fb3e8d;
+}
+.legendary {
+    color: #7b1fff;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+.small {
+    font-size: 90%;
+}
+td.small {
+    font-size: 80%;
+}
+.hidden {
+    display: none;
+}
+#message {
+    display: none;
+    font-weight: bold;
+    color: red;
+}

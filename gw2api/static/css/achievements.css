@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, Helvetica, sansserif;
+    /* Nested percentage font sizes seem to cause problems in Android Chrome. */
+    font-size: 14px;
+    background-color: #0d0b09;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    font-size: 14px;
+}
+tr {
+    vertical-align: baseline;
+    height: 20px;
+}
+td {
+    background-color: inherit;
+}
+tr.alt td {
+    /* background-color: #231f1c; */
+    background-color: #2b2623;
+}
+tr.locked td {
+    font-style: italic;
+}
+td, th {
+    padding-right: 0.75em;
+    /* border: 1px solid white; */
+}
+th, th.sort-left {
+    text-align: left;
+}
+th.sort-left {
+    cursor: pointer;
+}
+th.sort {
+    text-align: center;
+    cursor: pointer;
+}
+th.sort:hover, th.sort-left:hover {
+    text-decoration: underline;
+}
+tr img {
+    width: 1.4em;
+    height: 1.4em;
+}
+h3 {
+    margin-bottom: 0;
+}
+.right {
+    text-align: right;
+}
+.basic {
+    color: white;
+}
+.fine {
+    color: #62a4da;
+}
+.masterwork {
+    color: #1a9306;
+}
+.rare {
+    color: #fcd00b;
+}
+.exotic {
+    color: #ffa405;
+}
+.ascended {
+    color: #fb3e8d;
+}
+.legendary {
+    color: #7b1fff;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+div.small {
+    font-size: 12px;
+}
+.hidden {
+    display: none;
+}
+#message {
+    display: none;
+    font-weight: bold;
+    color: red;
+}
+.missing {
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    max-height: 16px;
+    overflow: hidden;
+}
+.missing:hover {
+    max-height: 1000px;
+}
+.nowrap {
+    white-space: nowrap;
+}

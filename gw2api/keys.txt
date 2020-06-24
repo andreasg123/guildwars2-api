@@ -1,0 +1,7 @@
+[keys]
+characters=ABC...YXZ
+characters_inventories=ABC...YXZ
+inventories=ABC...YXZ
+progression=ABC...YXZ
+unlocks=ABC...YXZ
+wallet=ABC...YXZ

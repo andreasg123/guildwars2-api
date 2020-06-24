@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sansserif;
+    /* Nested percentage font sizes seem to cause problems in Android Chrome. */
+    font-size: 14px;
+    background-color: #0d0b09;
+    color: white;
+}
+.locked {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+.locked:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+.thumb {
+    width: 50px;
+    height: 50px;
+    border: solid 1px #695f55;
+}
+.skin {
+    display: flex;
+    width: 156px;
+    height: 52px;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.skin a {
+    text-decoration: none;
+    color: white;
+}
+.name {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+#message {
+    display: none;
+    font-weight: bold;
+    color: red;
+}

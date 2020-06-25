@@ -9,15 +9,23 @@ skin name is displayed but the original name is used in the search.  Numbers in
 parentheses are item identifiers with links to
 [GW2Spidy](https://www.gw2spidy.com/).
 
+[Achievements](#achievements) | [Equipment](#equipment) |
+[Inventory](#inventory) | [Wallet](#wallet) | [Bank](#bank) |
+[Materials](#materials) | [Skins](#skins) | [Recipe Skins](#recipe-skins)
+
 
 Achievements
 ------------
 
-![Achievements](./achievements.png)
+![Achievements](./achievements.gif)
 
 Lists available achievements that can be sorted and filtered by different
-criteria.  Clicking on "Show only achievements giving mastery points" is
-helpful for determining how one can get more mastery points.
+criteria. Clicking on "Show only achievements giving mastery points" is helpful
+for determining how one can get more mastery points.  "ach" indicates the
+remaining achievement points for tier and total.  For repeatable achievements,
+the total remaining achievement points is the remainder of the point cap.  Only
+the first line of missing items for a collection is shown.  The other lines
+are shown on mouse-over.
 
 
 Equipment

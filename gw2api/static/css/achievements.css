@@ -95,9 +95,15 @@ div.small {
     line-height: 16px;
     max-height: 16px;
     overflow: hidden;
+    /* There will be a delay here because "max-height" will transition slowly from
+       500px to 16px even if the div only needs 32px. */
+    transition-property: max-height;
+    transition-duration: 0.5s;
 }
 .missing:hover {
-    max-height: 1000px;
+    /* There is no transition to "auto" and similar values. */
+    max-height: 500px;
+    transition-duration: 2s;
 }
 .nowrap {
     white-space: nowrap;

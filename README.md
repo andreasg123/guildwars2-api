@@ -9,7 +9,7 @@ game-related information in a more concise way.  The
 pages.  Links to items are color-coded by rarity.  Links conduct searches in
 the [Guild Wars 2 Wiki](https://wiki.guildwars2.com/wiki/Main_Page).
 
-![Achievements](./doc/achievements.png)
+![Achievements](./doc/achievements.gif)
 
 * Achievements.  Lists available achievements that can be sorted and filtered
   by different criteria.

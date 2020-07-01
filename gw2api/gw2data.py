@@ -2,6 +2,7 @@
 
 import json
 import gzip
+import io
 import ssl
 import urllib.error
 import urllib.parse
@@ -44,7 +45,7 @@ class Gw2Data:
                 else:
                     pass
         if f.info().get('Content-Encoding') == 'gzip':
-            buf = StringIO(f.read())
+            buf = io.BytesIO(f.read())
             f.close()
             f = gzip.GzipFile(fileobj=buf)
         x = json.load(f)

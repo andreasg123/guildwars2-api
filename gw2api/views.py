@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import configparser
-from flask import jsonify, request
+from flask import Blueprint, jsonify, request
 import os
 
-from . import app
 from . import achievements
 from . import bank
 from . import characters
 from . import skins
 from . import wallet
 
+bp = Blueprint('views', __name__)
 
-@app.route('/get-achievements')
+
+@bp.route('/get-achievements')
 def get_achievements():
     api_key = get_key('progression')
     data = achievements.get_achievements(api_key)
@@ -20,14 +21,14 @@ def get_achievements():
     return jsonify(data)
 
 
-@app.route('/get-characters')
+@bp.route('/get-characters')
 def get_characters():
     api_key = get_key('characters')
     data = characters.get_characters(api_key)
     return jsonify(data)
 
 
-@app.route('/get-inventory')
+@bp.route('/get-inventory')
 def get_inventory():
     api_key = get_key('characters_inventories')
     name = request.args.get('name')
@@ -35,7 +36,7 @@ def get_inventory():
     return jsonify(data)
 
 
-@app.route('/get-equipment')
+@bp.route('/get-equipment')
 def get_equipment():
     api_key = get_key('characters_inventories')
     name = request.args.get('name')
@@ -43,42 +44,42 @@ def get_equipment():
     return jsonify(data)
 
 
-@app.route('/get-shared')
+@bp.route('/get-shared')
 def get_shared():
     api_key = get_key('characters_inventories')
     data = characters.get_shared(api_key)
     return jsonify(data)
 
 
-@app.route('/get-wallet')
+@bp.route('/get-wallet')
 def get_wallet():
     api_key = get_key('wallet')
     data = wallet.get_wallet(api_key)
     return jsonify(data)
 
 
-@app.route('/get-bank')
+@bp.route('/get-bank')
 def get_bank():
     api_key = get_key('inventories')
     data = bank.get_bank(api_key)
     return jsonify(data)
 
 
-@app.route('/get-materials')
+@bp.route('/get-materials')
 def get_materials():
     api_key = get_key('inventories')
     data = bank.get_materials(api_key)
     return jsonify(data)
 
 
-@app.route('/get-skins')
+@bp.route('/get-skins')
 def get_skins():
     api_key = get_key('unlocks')
     data = skins.get_skins(api_key)
     return jsonify(data)
 
 
-@app.route('/get-recipe-skins')
+@bp.route('/get-recipe-skins')
 def get_recipe_skins():
     api_key = get_key('unlocks')
     data = skins.get_skins(api_key, True)

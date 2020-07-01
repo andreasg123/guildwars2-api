@@ -17,6 +17,9 @@ class Gw2Cache:
         self.db_path = db_path if db_path is not None else default_db_path
     
     def _getCursor(self):
+        dir_path = os.path.dirname(self.db_path)
+        if dir_path != '' and dir_path != '.':
+            os.makedirs(dir_path, exist_ok=True)
         conn = sqlite3.connect(self.db_path)
         return conn.cursor()
 
@@ -60,3 +63,8 @@ class Gw2Cache:
                   (0, now, json.dumps(ids, separators=(',',':'))))
         c.connection.commit()
         c.connection.close()
+
+
+def setDBPath(db_path):
+    global default_db_path
+    default_db_path = db_path

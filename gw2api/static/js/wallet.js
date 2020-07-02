@@ -1,4 +1,3 @@
-import {makeJSONRequest} from './xhr.js';
 import {api_url_prefix} from './api-url.js';
 import {escapeEntities} from './item-display.js';
 
@@ -37,7 +36,8 @@ function renderData(data) {
 
 async function loadData() {
   const url = `${api_url_prefix}get-wallet${window.location.search}`;
-  const data = await makeJSONRequest({url});
+  const res = await fetch(url);
+  const data = await res.json();
   renderData(data);
 }
 

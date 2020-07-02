@@ -1,4 +1,3 @@
-import {makeJSONRequest} from './xhr.js';
 import {GroupedItems, escapeEntities} from './item-display.js';
 import {api_url_prefix} from './api-url.js';
 
@@ -41,7 +40,7 @@ async function loadData() {
   const url = `${api_url_prefix}get-characters${window.location.search}`;
   const items = new Map();
   const skins = new Map();
-  const names = await makeJSONRequest({url});
+  const names = await fetch(url).then(res => res.json());
   if (names.error) {
     renderData(names);
     return;
@@ -51,7 +50,7 @@ async function loadData() {
     let qs = window.location.search;
     qs += (qs ? '&' : '?') + 'name=' + encodeURIComponent(names[index]);
     const url = `${api_url_prefix}get-equipment${qs}`;
-    const data = await makeJSONRequest({url});
+    const data = await fetch(url).then(res => res.json());
     characters[index] = data.character;
     for (const x of data.items) {
       items.set(x.id, x);

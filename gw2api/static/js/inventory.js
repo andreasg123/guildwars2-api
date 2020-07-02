@@ -1,4 +1,3 @@
-import {makeJSONRequest} from './xhr.js';
 import {GroupedItems, escapeEntities} from './item-display.js';
 import {api_url_prefix} from './api-url.js';
 
@@ -57,7 +56,7 @@ async function loadData() {
   const url = `${api_url_prefix}get-characters${window.location.search}`;
   const items = new Map();
   const skins = new Map();
-  const names = await makeJSONRequest({url});
+  const names = await fetch(url).then(res => res.json());
   if (names.error) {
     renderData(names);
     return;
@@ -74,7 +73,7 @@ async function loadData() {
       qs += (qs ? '&' : '?') + 'name=' + encodeURIComponent(names[index]);
       url = `${api_url_prefix}get-inventory${qs}`;
     }
-    const data = await makeJSONRequest({url});
+    const data = await fetch(url).then(res => res.json());
     if (index < 0) {
       shared.push(...data.shared);
     }

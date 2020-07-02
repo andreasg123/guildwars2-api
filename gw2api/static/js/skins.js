@@ -1,4 +1,3 @@
-import {makeJSONRequest} from './xhr.js';
 import {getItemLinkUrl, escapeEntities} from './item-display.js';
 import {SkinGroup} from './skin-display.js';
 import {api_url_prefix} from './api-url.js';
@@ -69,7 +68,8 @@ function renderData(data) {
 
 async function loadData() {
   const url = `${api_url_prefix}get-skins${window.location.search}`;
-  const data = await makeJSONRequest({url});
+  const res = await fetch(url);
+  const data = await res.json();
   renderData(data);
 }
 

@@ -30,34 +30,49 @@ the [Guild Wars 2 Wiki](https://wiki.guildwars2.com/wiki/Main_Page).
 * Recipe Skins.  Displays locked skins for which the recipe is known.
 
 
-Usage
------
+Installation
+------------
 
-Flask may run the app locally.  After installing Flask, you can run this
-command in a bash Terminal:
+Python 3 is required.  On many systems, including macOS Catalina, that is
+available as `/usr/bin/python3`.  In Windows, you can either use `python3` in
+an [Ubuntu
+Terminal](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q) or
+[install Python](https://www.python.org/downloads/windows/).
 
-    FLASK_APP=gw2api flask run
+Install Flask (requires `sudo` unless a local Python environment, e.g., via
+`virtualenv`, is used):
 
-In Windows, you can set the environment variable `FLASK_APP=gw2api` and do the
-same in a Command Prompt or Powershell.
-
-See below for changing the location of the cache database.
-
-Now, you can open this page in a web browser:
-`http://127.0.0.1:5000/static/index.html`
+    sudo pip3 install flask
 
 If you have access to a web server running Apache, you can configure
 [mod_wsgi](https://modwsgi.readthedocs.io/) using the [sample
 configuration](./sample-mod_wsgi.conf).
 
-While you can access the pages as `https://server/gw2api/static/index.html`, it
-is preferable to have Apache serve the static pages.  That requires configuring
-Apache to serve the content of [gw2api/static](./gw2api/static), maybe after
-copying it elsewhere.  The file [api-url.js](./gw2api/static/js/api-url.js)
-needs to be edited.  For the sample configuration, it should have this content:
+If you use Apache, it is recommended to have Apache serve the static pages.
+That requires configuring Apache to serve the content of
+[gw2api/static](./gw2api/static), maybe after copying it elsewhere.
+The file [api-url.js](./gw2api/static/js/api-url.js) needs to be edited.
+For the sample configuration, it should have this content:
 
     export const api_url_prefix = '/gw2api/';
 
+
+Usage
+-----
+
+Flask may run the app locally.  Run this command in a bash Terminal (add
+`--host=0.0.0.0` if you want to access the web server from another system):
+
+    FLASK_APP=gw2api flask run
+
+In Windows, set the environment variable `FLASK_APP=gw2api` and run
+`flask run` in a Command Prompt or Powershell.
+
+Open the following page in a web browser:
+`http://127.0.0.1:5000/static/index.html`
+
+If you use Apache, open this page instead (after replacing `server` and
+`prefix` with the appropriate values): `https://server/prefix/`
 
 
 API Key
